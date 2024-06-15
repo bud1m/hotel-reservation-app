@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="raf.hotelreservation.client.gui.controllers.MainController">
+   <children>
+      <Button fx:id="findHotels" layoutX="482.0" layoutY="304.0" mnemonicParsing="false" onAction="#findHotelslButtonClicked" text="Pretrazi" />
+      <Text layoutX="14.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mesto" wrappingWidth="107.357421875" />
+      <Slider fx:id="findCentarSlider" blockIncrement="0.25" layoutX="173.0" layoutY="301.0" majorTickUnit="1.0" max="20.0" minorTickCount="1" prefHeight="32.0" prefWidth="149.0" showTickLabels="true" value="10.0" />
+      <Text layoutX="173.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Udaljenost od centra" wrappingWidth="140.0" />
+      <Text layoutX="332.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minimum kategorija" wrappingWidth="140.0" />
+      <Text layoutX="25.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista hotela" />
+      <ComboBox fx:id="findMestoComboBox" layoutX="14.0" layoutY="304.0" prefWidth="150.0" />
+      <RadioButton fx:id="min3Radio" layoutX="342.0" layoutY="308.0" mnemonicParsing="false" selected="true" text="3">
+         <toggleGroup>
+            <ToggleGroup fx:id="findKategorija" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="min4Radio" layoutX="374.0" layoutY="308.0" mnemonicParsing="false" selected="true" text="4" toggleGroup="$findKategorija" />
+      <RadioButton fx:id="min5Radio" layoutX="409.0" layoutY="308.0" mnemonicParsing="false" selected="true" text="5" textAlignment="CENTER" toggleGroup="$findKategorija" />
+      <TableView fx:id="tableView" layoutX="25.0" layoutY="23.0" prefHeight="232.0" prefWidth="551.0">
+        <columns>
+          <TableColumn fx:id="imeCol" prefWidth="123.0" text="Ime" />
+          <TableColumn fx:id="kategorijaCol" prefWidth="68.0" text="Kategorija" />
+            <TableColumn fx:id="mestoCol" prefWidth="123.0" text="Mesto" />
+            <TableColumn fx:id="centarCol" prefWidth="48.0" text="Centar" />
+            <TableColumn fx:id="sobeCol" minWidth="0.0" prefWidth="85.0" text="Sobe" />
+            <TableColumn fx:id="cenaCol" minWidth="0.0" prefWidth="103.0" text="Cena" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="pocetakBoravkaDate" layoutX="224.0" layoutY="393.0" />
+      <Text layoutX="223.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pocetak boravka" wrappingWidth="107.357421875" />
+      <TextField fx:id="brojDanaText" layoutX="416.0" layoutY="393.0" prefHeight="25.0" prefWidth="56.0" />
+      <Text layoutX="416.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Broj dana" wrappingWidth="60.28125" />
+      <Button fx:id="rezervisiButton" layoutX="561.0" layoutY="393.0" mnemonicParsing="false" onAction="#reserveHotelButtonClicked" text="Rezervisi" />
+      <Text layoutX="486.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Broj soba" wrappingWidth="60.28125" />
+      <TextField fx:id="brojSobaText" layoutX="488.0" layoutY="393.0" prefHeight="25.0" prefWidth="56.0" />
+   </children>
+</Pane>

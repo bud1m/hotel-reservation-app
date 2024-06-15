@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option java_multiple_files = true;
+option java_package = "raf.hotelreservation.grpc";
+
+
+
+service HotelService {
+  rpc GetAllHotels(google.protobuf.Empty) returns (stream Hotel);
+  rpc FindAvailableHotels(QueryRequest) returns (stream Hotel);
+
+}
+
+message QueryRequest {
+  string clientID = 1;
+  string city = 2;
+  double maxDistance = 3;
+  int32 minStars = 4;
+}
+
+message Hotel {
+  string name = 1;
+  int32 stars = 2;
+  string location = 3;
+  double distanceFromCenter = 4;
+}
